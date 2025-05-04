@@ -15,7 +15,7 @@ export const getReview = async (req, res) => {
       return res.status(500).json({ error: 'Failed to generate response' });
     }
 
-    res.status(200).json({ message: response });
+    res.send(response);
   } catch (error) {
 
     console.error('Error occurred in getResponse:', error);
