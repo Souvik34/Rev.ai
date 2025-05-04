@@ -1,8 +1,8 @@
 import { generateContent } from "../services/ai.service.js";
 
-export const getResponse = async (req, res) => {
+export const getReview = async (req, res) => {
   try {
-    const prompt = req.query.prompt?.trim();
+    const prompt = req.body.prompt?.trim();
     if (!prompt) {
       return res.status(400).json({ error: 'Prompt is required' });
     }
