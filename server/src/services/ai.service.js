@@ -1,4 +1,8 @@
 import { GoogleGenAI } from "@google/genai";
+import fetch from "node-fetch"; 
+
+
+globalThis.fetch = fetch;
 
 const ai = new GoogleGenAI({ apiKey: process.env.GOOGLE_GEMINI_KEY });
 
@@ -12,7 +16,6 @@ async function generateContent(prompt) {
   return response.text;
 }
 
-// Example usage:
-await generateContent("Explain how AI works in a few words");
+
 
 export { generateContent };

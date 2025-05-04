@@ -9,6 +9,12 @@ dotenv.config({
 });
 
 
+import aiRouter from './src/routes/ai.routes.js';
+app.use(express.json());
+app.use('/ai', aiRouter);
+
+
+
 const PORT = process.env.PORT || 4000;
 
 app.listen(PORT,()=> {
