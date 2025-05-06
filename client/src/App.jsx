@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import Home from "./components/Home";
 
-const App = () => {
+function App() {
   return (
-    <div>App</div>
-  )
+    <main className="min-h-screen flex items-center justify-center bg-white dark:bg-[#0B0B0F]">
+      <Home />
+    </main>
+  );
 }
 
-export default App
+export default App;
