@@ -1,12 +1,14 @@
-import React from "react";
-import Home from "./pages/Home";
+import React from 'react';
+import HistoryPanel from './components/HistoryPanel';
+import Editor from './components/Editor';
+import ReviewPanel from './components/ReviewPanel';
 
-function App() {
+export default function App() {
   return (
-    <main className="min-h-screen flex items-center justify-center bg-white dark:bg-[#0B0B0F]">
-      <Home />
-    </main>
+    <div className="min-h-screen bg-[#2d145d] text-white flex">
+      <HistoryPanel />
+      <Editor />
+      <ReviewPanel />
+    </div>
   );
 }
-
-export default App;
