@@ -9,15 +9,32 @@ const CodeEditor = ({ code, setCode, onRun, onReset }) => {
   };
 
   return (
-    <div className="flex flex-col h-full bg-[#1a1b3a] text-white rounded shadow-lg overflow-hidden">
+    <div className="relative flex flex-col h-full bg-[#1a1b3a] text-white rounded shadow-lg overflow-hidden">
+      {/* Placeholder text shown only when code is empty */}
+      {!code && (
+        <pre
+          className="absolute top-4 left-4 pointer-events-none select-none text-gray-500 font-mono text-lg whitespace-pre-wrap"
+          style={{ userSelect: "none" }}
+        >
+          {"# Write your code here..."}
+        </pre>
+      )}
+
       {/* Editor Area */}
       <div className="flex-1">
         <Editor
           height="100%"
-          defaultLanguage="python"
+          defaultLanguage="javascript"
           value={code}
           onChange={(val) => setCode(val)}
           theme="vs-dark"
+          options={{
+            fontSize: 20,
+            minimap: { enabled: false },
+            fontFamily: "'Fira Code', monospace",
+            lineNumbers: "on",
+            padding: { top: 20, bottom: 20 },
+          }}
         />
       </div>
 
