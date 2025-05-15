@@ -2,7 +2,8 @@
 import axios from 'axios';
 
 // Make sure this URL matches your backend endpoint, or use env variable
-const BASE_URL = process.env.REACT_APP_BACKEND_URL;
+const BASE_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:4000';
+
 
 export const getCodeReview = async (code) => {
   try {
