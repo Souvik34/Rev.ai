@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ReviewPanel = ({ suggestions = [] }) => {
+const ReviewPanel = ({ suggestions }) => {
   return (
     <div className="bg-[#2c2c54] h-full p-4 text-white rounded shadow-md">
       <h2 className="text-lg font-semibold mb-4">REVIEW</h2>
