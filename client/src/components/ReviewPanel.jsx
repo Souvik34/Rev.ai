@@ -6,7 +6,7 @@ const ReviewPanel = ({ suggestions = [] }) => {
     <div className="bg-[#2c2c54] h-full p-4 text-white rounded shadow-md">
       <h2 className="text-3xl font-semibold mb-4">REVIEW</h2>
 
-      <div className="bg-[#1a1b3a] p-4 rounded">
+      <div className="bg-[#1a1b3a] p-4 rounded max-h-150 overflow-y-auto">
         <h3 className="font-semibold mb-2 text-xl">Suggestions</h3>
 
         <ul className="list-disc pl-5 space-y-2 text-lg text-gray-300">
