@@ -1,26 +1,32 @@
 import React from "react";
 import Editor from "@monaco-editor/react";
 import { Copy, RefreshCcw, Play } from "lucide-react";
+import { toast } from "react-hot-toast";
 
 const CodeEditor = ({ code, setCode, onRun, onReset }) => {
   const handleCopy = async () => {
     await navigator.clipboard.writeText(code);
-    alert("Code copied!");
+    toast.success("Code copied! 🎉", {
+      position: "top-center",
+      style: {
+        fontWeight: "bold",
+        fontSize: "18px",
+        padding: "12px 24px",
+      },
+    });
   };
 
   return (
     <div className="relative flex flex-col h-full bg-[#1a1b3a] text-white rounded shadow-lg overflow-hidden">
-      {/* Placeholder text shown only when code is empty */}
       {!code && (
         <pre
-          className="absolute top-4 left-4 pointer-events-none select-none text-gray-500 font-mono text-lg whitespace-pre-wrap"
+          className="absolute top-2 left-1/2 transform -translate-x-1/2 pointer-events-none select-none text-gray-400 font-mono text-xl font-bold whitespace-pre-wrap"
           style={{ userSelect: "none" }}
         >
           {"# Write your code here..."}
         </pre>
       )}
 
-      {/* Editor Area */}
       <div className="flex-1">
         <Editor
           height="100%"
@@ -38,7 +44,6 @@ const CodeEditor = ({ code, setCode, onRun, onReset }) => {
         />
       </div>
 
-      {/* Toolbar */}
       <div className="flex items-center justify-end gap-4 bg-[#2c2c54] p-3 border-t border-[#8e44ad]">
         <button
           onClick={handleCopy}
@@ -56,7 +61,7 @@ const CodeEditor = ({ code, setCode, onRun, onReset }) => {
           <RefreshCcw size={20} />
         </button>
 
-        <div className="w-4" /> {/* Spacer */}
+        <div className="w-4" />
 
         <button
           onClick={onRun}

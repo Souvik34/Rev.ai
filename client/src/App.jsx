@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import CodeEditor from "./components/CodeEditor";
 import ReviewPanel from "./components/ReviewPanel";
 import { getCodeReview } from "./api";
+import { Toaster } from 'react-hot-toast';
 
 const App = () => {
   const [code, setCode] = useState("");
@@ -28,6 +29,8 @@ const App = () => {
   };
 
   return (
+    <>
+     <Toaster />
     <div className="flex h-screen gap-4 p-4 bg-[#0f0f2e]">
       <div className="flex-1">
         <CodeEditor code={code} setCode={setCode} onRun={handleRun} onReset={handleReset} />
@@ -40,6 +43,7 @@ const App = () => {
         )}
       </div>
     </div>
+    </>
   );
 };
 
