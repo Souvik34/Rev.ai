@@ -1,6 +1,7 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 
-const ReviewPanel = ({ suggestions }) => {
+const ReviewPanel = ({ suggestions = [] }) => {
   return (
     <div className="bg-[#2c2c54] h-full p-4 text-white rounded shadow-md">
       <h2 className="text-lg font-semibold mb-4">REVIEW</h2>
@@ -11,7 +12,9 @@ const ReviewPanel = ({ suggestions }) => {
         <ul className="list-disc pl-5 space-y-2 text-sm text-gray-300">
           {Array.isArray(suggestions) && suggestions.length > 0 ? (
             suggestions.map((sug, idx) => (
-              <li key={idx}>{sug}</li>
+              <li key={idx}>
+                <ReactMarkdown>{sug}</ReactMarkdown>
+              </li>
             ))
           ) : (
             <li>No suggestions available.</li>
