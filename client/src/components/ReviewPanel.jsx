@@ -1,16 +1,19 @@
-import React from 'react';
+import React from "react";
 
-export default function ReviewPanel() {
+const ReviewPanel = ({ suggestions }) => {
   return (
-    <div className="w-1/5 p-4">
-      <h2 className="text-lg font-bold mb-4">REVIEW</h2>
-      <div className="bg-purple-700 p-4 rounded-lg">
+    <div className="bg-[#2c2c54] h-full p-4 text-white rounded">
+      <h2 className="text-lg font-semibold mb-4">REVIEW</h2>
+      <div className="bg-[#1a1b3a] p-4 rounded">
         <h3 className="font-semibold mb-2">Suggestions</h3>
-        <ul className="text-sm text-purple-200 list-disc ml-4">
-          <li>Consider using the add() function for addition</li>
-          <li>No newline at end of file</li>
+        <ul className="list-disc pl-5 space-y-2 text-sm text-gray-300">
+          {suggestions.map((sug, idx) => (
+            <li key={idx}>{sug}</li>
+          ))}
         </ul>
       </div>
     </div>
   );
-}
+};
+
+export default ReviewPanel;
