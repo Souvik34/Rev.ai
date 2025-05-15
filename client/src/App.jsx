@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import CodeEditor from "./components/CodeEditor";
 import ReviewPanel from "./components/ReviewPanel";
