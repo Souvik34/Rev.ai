@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Orbitron', monospace;
+  background: linear-gradient(135deg, #000000, #1a1a40, #3b006f);
+  color: #d0d7ff;
+}
+
+.glow-text {
+  text-shadow:
+    0 0 5px #7f00ff,
+    0 0 10px #7f00ff,
+    0 0 20px #00f0ff,
+    0 0 30px #7f00ff,
+    0 0 40px #00f0ff;
+}
